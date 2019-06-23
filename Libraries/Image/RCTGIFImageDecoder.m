@@ -32,7 +32,7 @@ RCT_EXPORT_MODULE()
 {
   CGImageSourceRef imageSource = CGImageSourceCreateWithData((CFDataRef)imageData, NULL);
   NSDictionary<NSString *, id> *properties = (__bridge_transfer NSDictionary *)CGImageSourceCopyProperties(imageSource, NULL);
-  NSUInteger loopCount = 0;
+  CGFloat loopCount = 0;
   if ([[properties[(id)kCGImagePropertyGIFDictionary] allKeys] containsObject:(id)kCGImagePropertyGIFLoopCount]) {
     loopCount = [properties[(id)kCGImagePropertyGIFDictionary][(id)kCGImagePropertyGIFLoopCount] unsignedIntegerValue];
     if (loopCount == 0) {
